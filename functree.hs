@@ -1,5 +1,3 @@
-module FT where
-
 import Data.Functor
 import Distribution.Compat.Directory (listDirectory)
 import Distribution.Utils.ShortText (encodeStringUtf8)
@@ -16,5 +14,5 @@ parseArgs :: [String] -> String
 parseArgs [name] = name
 parseArgs _ = usage
 
-ft :: IO ()
-ft = getArgs >>= dirToString . head >>= putStrLn
+main :: IO ()
+main = getArgs >>= dirToString . head >>= putStrLn
