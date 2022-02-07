@@ -1,8 +1,8 @@
 .PHONY: all
 all: functree treegen
 
-functree:
+functree: functree.hs
 	ghc functree.hs
 
-treegen:
+treegen: treegen.hs
 	ghc treegen.hs

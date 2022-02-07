@@ -1,6 +1,4 @@
-import Data.Functor
 import Distribution.Compat.Directory (listDirectory)
-import Distribution.Utils.ShortText (encodeStringUtf8)
 import System.Environment
 
 dirToString :: String -> IO String
@@ -15,4 +13,4 @@ parseArgs [name] = name
 parseArgs _ = usage
 
 main :: IO ()
-main = getArgs >>= dirToString . head >>= putStrLn
+main = getArgs >>= dirToString . parseArgs >>= putStrLn
